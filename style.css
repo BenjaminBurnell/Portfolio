@@ -209,6 +209,10 @@ body {
   margin-bottom: 1.5rem;
 }
 
+pre {
+  color: red;
+}
+
 .hero-content p {
   max-width: 600px;
   margin: 0 auto 2.5rem;
@@ -813,12 +817,14 @@ body.light .repo-card:hover {
 }
 
 .contact-section h2 {
+  font-size: 50px;
   font-size: 2rem;
   color: var(--fg);
   margin-bottom: 1rem;
 }
 
 .contact-text {
+  text-align:center;
   color: var(--muted);
   max-width: 600px;
   margin: 0 auto 2rem;
@@ -853,6 +859,7 @@ body.light .repo-card:hover {
 }
 
 .social-links {
+  height:fit-content;
   margin-top: 3rem;
   display: flex;
   flex-wrap: wrap;
@@ -925,8 +932,9 @@ footer {
     position: fixed;
     pointer-events: none;
     transform: translate(-50%, -50%); 
-    transition: transform 0.1s cubic-bezier(0.2, 0.8, 0.4, 1);
+    transition: opacity 0.2s ease, transform 0.1s cubic-bezier(0.2, 0.8, 0.4, 1);
     z-index: 9999;
+    opacity:1;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   }
 
