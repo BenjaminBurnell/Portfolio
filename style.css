@@ -766,7 +766,7 @@ body.light .repo-card:hover {
   }
 }
 
-@media(pointer:thumb) {
+@media(pointer:coarse) {
   .repo-card > .repo-header > .repo-links {
     display: flex;
     gap: 0.4rem;
