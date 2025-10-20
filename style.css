@@ -992,6 +992,7 @@ footer {
   border-radius: 8px;
   text-decoration: none;
   transition: background 0.2s ease, transform 0.2s ease;
+  font-family: "JetBrains Mono", monospace;
 }
 
 .email-btn:hover {
@@ -1006,8 +1007,8 @@ footer {
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  cursor: pointer;
   transition: background 0.2s ease;
+  font-family: "JetBrains Mono", monospace;
 }
 
 .close-popup:hover {

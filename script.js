@@ -70,7 +70,6 @@ fadeEls.forEach(el => observer.observe(el));
 
 window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
-  console.log('Scroll position:', scrollTop);
   if(scrollTop >= 100) {
     mouseScroll[0].style.transition = ".15s"
     mouseScroll[0].style.opacity = "0"
@@ -122,13 +121,15 @@ const isDesktop = window.innerWidth > 768;
 const emailPopup = document.getElementById("email-popup");
 const copyEmailBtn = document.getElementById("copy-email");
 const closePopupBtn = document.getElementById("close-popup");
-const emailLink = document.querySelector(".contact-email");
+const emailLink = document.querySelectorAll(".contact-email");
 
 if (emailLink && isDesktop) {
-  emailLink.addEventListener("click", (e) => {
-    e.preventDefault();
-    emailPopup.classList.add("visible");
-  });
+  emailLink.forEach((btnLink) => {
+    btnLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      emailPopup.classList.add("visible");
+    });
+  })
 }
 
 closePopupBtn.addEventListener("click", () => {
