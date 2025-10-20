@@ -747,8 +747,18 @@ body.light .repo-card:hover {
 .repo-card > .repo-header > .repo-links {
   display: flex;
   gap: 0.4rem;
-  /* opacity: 0; */
+  opacity: 0;
   transform: translateY(4px);
+  transition:.15s;
+  padding:5px;
+  border-radius: 10px;
+}
+
+.repo-card:hover > .repo-header > .repo-links {
+  display: flex;
+  gap: 0.4rem;
+  opacity: 1;
+  transform: translateY(0px);
   transition:.15s;
   padding:5px;
   border-radius: 10px;

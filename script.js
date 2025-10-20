@@ -104,7 +104,7 @@ document.addEventListener('mouseenter', () => {
 
 // Hover effects for interactive targets
 const targets = document.querySelectorAll(
-  'a, p, h1, h2, h3, #song-display, button, .style-preview-card, img, .repo-card'
+  'a, p, h1, h2, h3, #song-display, button, .style-preview-card, img, .repo-card, .project-item'
 );
 
 targets.forEach(target => {
@@ -184,4 +184,6 @@ window.addEventListener('load', () => {
   }, 500)
 });
 
-// console.log(window.history.back())
+function openProject(URL) {
+  window.location = window.location.origin + '/Project/?name=' + URL
+}
