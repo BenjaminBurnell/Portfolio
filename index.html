@@ -31,7 +31,7 @@
         <span class="bracket">{</span> BenjaminBurnell
         <span class="bracket">}</span>
       </h1> -->
-      <nav>
+      <nav id="nav-Section-Links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
@@ -69,7 +69,7 @@
         <button class="social-btn" onclick="window.open('https://www.linkedin.com/in/ben-burnell-923b19326/')" target="_blank">
           <i class="fa-brands fa-linkedin" style="font-size: 1.2rem;"></i>
         </button>
-        <button class="social-btn" style="padding:6px 10px;" download="Ben Burnell's Resume.pdf" target="_blank">
+        <button class="social-btn" style="padding:6px 10px;" id="download-resume">
           <i class="fa-regular fa-file" style="font-size: 1rem;"></i>
         </button>
       </nav>
@@ -78,7 +78,7 @@
 
   <section id="hero" class="hero-section hidden">
     <div class="hero-content">
-      <h1>Hi, I'm <span class="accent">Benjamin Burnell</span></h1>
+      <h1>Hey, I'm <span class="accent">Benjamin Burnell</span></h1>
       <h2>Python Developer & Web Enthusiast</h2>
       <p>
         I love building clean, efficient software — from AI tools and web apps
@@ -89,19 +89,52 @@
         <a href="#projects" class="btn-primary"> View Projects </a>
         <a href="#contact" class="btn-secondary"> Contact Me </a>
       </div>
+      <div class="scroll-downs">
+        <div class="mousey">
+          <span>Scroll</span>
+          <div class="scroller"></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="about" class="section fade-in hidden">
-    <h2>About Me</h2>
-    <p>
-      Hey there! I’m a developer who enjoys building modern, functional web
-      apps and experimenting with AI, design systems, and clean architecture.
-    </p>
+  <section id="about" class="about-section hidden">
+    <div class="about-container">
+      <div class="about-text">
+        <h3 class="about-subtitle">ABOUT ME</h3>
+        <h2 class="about-title">
+          I'm a developer passionate about bringing <span class="highlight">something</span> to life from <span class="faint">nothing</span>.
+        </h2>
+        <p class="about-description">
+          My focus is on constant learning and using that knowledge in real projects — theory is cool, but building your own things is way <span class="highlight-alt">cooler</span>.
+        </p>
+        <p class="about-status">
+          I'm currently open to opportunities and collaborations. If you’ve got something exciting, feel free to reach out!
+        </p>
+
+        <a href="#contact" class="btn-primary about-btn">
+          <i class="fa-solid fa-envelope"></i> Drop me a line →
+        </a>
+      </div>
+
+      <div class="about-images">
+        <div class="image-wrapper">
+          <img src="assets/IMG_2916.jpeg" alt="Developer at lakeside" />
+        </div>
+        <div class="image-wrapper">
+          <img src="assets/IMG_2915.jpeg" alt="Developer at event" />
+        </div>
+      </div>
+    </div>
   </section>
 
+
+
   <section id="projects" class="section fade-in hidden">
-    <h2>Repositories</h2>
+    <h3 class="repo-subtitle">REPOSITORIES</h3>
+    <h1 class="repo-title">
+      A few projects I've worked on...
+    </h1>
     <div class="repo-grid">
       <div class="repo-card">
         <div class="repo-header">
@@ -221,6 +254,7 @@
           <span class="tag">OpenCV</span>
           <span class="tag">NumPy</span>
           <span class="tag">Kociemba</span>
+          <span class="tag">Scikit-Learn</span>
         </div>
 
         <div class="repo-meta">
@@ -295,7 +329,7 @@
       interesting conversations. Feel free to reach out if you'd like to chat!
     </p>
 
-    <a href="mailto:benburnell.git@gmail.com" class="contact-email">
+    <a href="mailto:benburnell.git@gmail.com?subject=Let's%20Connect&body=Hi%20Ben%2C%0A%0AI%20found%20your%20portfolio%20and%20wanted%20to%20reach%20out." class="contact-email">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="icon-mail"
@@ -310,7 +344,7 @@
     </a>
 
     <div class="social-links">
-      <a href="https://github.com/yourusername" target="_blank">
+      <a href="https://github.com/benjaminburnell" target="_blank">
         <i class="fa-brands fa-github"></i>
         GitHub
       </a>
@@ -330,9 +364,46 @@
   </section>
 
   <footer class="fade-in hidden">
-    <p>© 2025 Benjamin Burnell — Crafted with HTML5, CSS, JavaScript</p>
+    <p>© 2025 Benjamin Burnell — Crafted with HTML5, CSS3+, JavaScript(ES6)</p>
   </footer>
 
+  <!-- Email Popup -->
+  <div id="email-popup" class="email-popup email-hidden">
+    <div class="email-popup-content">
+      <h3>Contact Me</h3>
+      <p>Choose how you’d like to reach me:</p>
+
+      <div class="email-options">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=benburnell.git@gmail.com" target="_blank" class="email-btn">
+          <i class="fa-brands fa-google"></i> Gmail
+        </a>
+        <a href="https://compose.mail.yahoo.com/?to=benburnell.git@gmail.com" target="_blank" class="email-btn">
+          <i class="fa-brands fa-yahoo"></i> Yahoo
+        </a>
+        <a href="https://outlook.live.com/mail/0/deeplink/compose?to=benburnell.git@gmail.com" target="_blank" class="email-btn">
+          <i class="fa-brands fa-windows"></i> Outlook
+        </a>
+        <button id="copy-email" class="email-btn">
+          <i class="fa-regular fa-copy"></i> Copy Email
+        </button>
+      </div>
+
+      <button id="close-popup" class="close-popup">Close</button>
+    </div>
+  </div>
+
+  <div id="custom-cursor"></div>
+
+  <script>
+    document.getElementById("download-resume").addEventListener("click", () => {
+      const link = document.createElement("a");
+      link.href = "assets/Ben Burnell's Resume.pdf";
+      link.download = "Ben Burnell's Resume.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
