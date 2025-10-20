@@ -135,7 +135,6 @@ body {
 .nav-Buttons-Container {
   display:flex;
   gap:10px;
-  background:red;
 }
 
 .navbar.visible {
