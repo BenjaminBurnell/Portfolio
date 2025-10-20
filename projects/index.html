@@ -365,7 +365,7 @@
         projects.forEach((project, index) => {
             const item = document.createElement("a");
             item.classList.add("project-item");
-            item.href = window.location.origin + "/Project/?name=" + encodeURIComponent(project.link)
+            item.href = window.location.origin + "/project/?name=" + encodeURIComponent(project.link)
             item.innerHTML = `
         <div class="project-info">
           <i class="fa-regular fa-file-code"></i>
