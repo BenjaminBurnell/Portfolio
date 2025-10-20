@@ -41,6 +41,7 @@
         }
 
         .section-subtext {
+            width:calc(100% - 50px);
             color: var(--muted);
             text-align: center;
             margin-bottom: 2rem;
@@ -170,6 +171,10 @@
             opacity: 0.8;
         }
 
+        .contact-text {
+            width:calc(100% - 50px);
+        }
+
         .icon-mail {
             width: 20px;
             height: 20px;
@@ -223,10 +228,12 @@
                 transform: translateY(-40px);
             }
         }
+
+
     </style>
 </head>
 
-<body onload="loaded()">
+<body>
     <!-- Loader -->
     <div id="loader">
         <div class="spinner"></div>
@@ -236,8 +243,13 @@
     <!-- Navbar -->
     <header class="navbar hidden">
         <div id="navbar-Content">
+            <!-- <nav id="nav-Section-Links">
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#contact">Contact</a>
+            </nav> -->
             <a href="../index.html" class="back-btn-1"><i class="fa-solid fa-arrow-left"></i></a>
-            <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+            <a href="../projects" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
             <nav class="nav-Buttons-Container">
                 <button id="theme-toggle" class="toggle-btn" aria-label="Toggle Theme">
                     <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
@@ -250,13 +262,15 @@
                     </svg>
                 </button>
                 <button class="social-btn" onclick="window.open('https://github.com/benjaminburnell')">
-                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-github" style="font-size: 1.2rem;"></i>
                 </button>
-                <button class="social-btn" onclick="window.open('https://www.linkedin.com/in/ben-burnell-923b19326/')">
-                    <i class="fa-brands fa-linkedin"></i>
+
+                <button class="social-btn" onclick="window.open('https://www.linkedin.com/in/ben-burnell-923b19326/')"
+                    target="_blank">
+                    <i class="fa-brands fa-linkedin" style="font-size: 1.2rem;"></i>
                 </button>
                 <button class="social-btn" style="padding:6px 10px;" id="download-resume">
-                    <i class="fa-regular fa-file"></i>
+                    <i class="fa-regular fa-file" style="font-size: 1rem;"></i>
                 </button>
             </nav>
         </div>

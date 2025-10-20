@@ -91,7 +91,7 @@ body {
 /* ===================== NAVBAR ===================== */
 .navbar {
   background: var(--bg-seethroug);
-  padding: 1rem 2rem;
+  padding: 1rem 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,6 +135,7 @@ body {
 .nav-Buttons-Container {
   display:flex;
   gap:10px;
+  background:red;
 }
 
 .navbar.visible {
