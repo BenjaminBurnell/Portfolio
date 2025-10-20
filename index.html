@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Portfolio</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Loading portfolio...</p>
+  </div>
+
+  <header class="navbar hidden">
+    <div id="navbar-Content">
+      <!-- <h1>
+        <span class="bracket">{</span> BenjaminBurnell
+        <span class="bracket">}</span>
+      </h1> -->
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <nav class="nav-Buttons-Container">
+        <button id="theme-toggle" class="toggle-btn" aria-label="Toggle Theme">
+          <!-- Default icon: Moon -->
+          <svg
+            id="moon-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="var(--fg)"
+          >
+            <path d="M21 12.79A9 9 0 0 1 11.21 3 7 7 0 1 0 21 12.79Z" />
+          </svg>
+          <svg
+            id="sun-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="var(--fg)"
+          >
+            <path
+              d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-16h0a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1ZM12 19h0a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1Zm9-7h1a1 1 0 1 1 0 2h-1a1 1 0 1 1 0-2ZM3 12H2a1 1 0 1 1 0-2h1a1 1 0 1 1 0 2Zm15.364 6.364a1 1 0 0 1 0-1.414l.707-.707a1 1 0 1 1 1.415 1.414l-.708.707a1 1 0 0 1-1.414 0ZM5.515 6.636a1 1 0 0 1 0-1.414l.707-.707A1 1 0 1 1 7.637 5.93l-.708.707a1 1 0 0 1-1.414 0Zm12.728-1.414a1 1 0 0 1 1.415 1.414l-.708.707a1 1 0 0 1-1.414-1.414l.707-.707ZM5.93 18.485a1 1 0 0 1 1.414-1.415l.707.708a1 1 0 0 1-1.414 1.414l-.707-.707Z"
+            />
+          </svg>
+        </button>
+        <button class="social-btn" onclick="window.open('https://github.com/benjaminburnell')">
+          <i class="fa-brands fa-github" style="font-size: 1.2rem;"></i>
+        </button>
+        
+        <button class="social-btn" onclick="window.open('https://www.linkedin.com/in/ben-burnell-923b19326/')" target="_blank">
+          <i class="fa-brands fa-linkedin" style="font-size: 1.2rem;"></i>
+        </button>
+        <button class="social-btn" style="padding:6px 10px;" download="Ben Burnell's Resume.pdf" target="_blank">
+          <i class="fa-regular fa-file" style="font-size: 1rem;"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero" class="hero-section hidden">
+    <div class="hero-content">
+      <h1>Hi, I'm <span class="accent">Benjamin Burnell</span></h1>
+      <h2>Python Developer & Web Enthusiast</h2>
+      <p>
+        I love building clean, efficient software — from AI tools and web apps
+        to automation scripts. Always learning, always creating.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-primary"> View Projects </a>
+        <a href="#contact" class="btn-secondary"> Contact Me </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section fade-in hidden">
+    <h2>About Me</h2>
+    <p>
+      Hey there! I’m a developer who enjoys building modern, functional web
+      apps and experimenting with AI, design systems, and clean architecture.
+    </p>
+  </section>
+
+  <section id="projects" class="section fade-in hidden">
+    <h2>Repositories</h2>
+    <div class="repo-grid">
+      <div class="repo-card">
+        <div class="repo-header">
+          <h3>Async Web Crawler</h3>
+          <div class="repo-links">
+            <a
+              href="https://github.com/BenjaminBurnell/Async-Web-Crawler"
+              target="_blank"
+              aria-label="View Repository"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="var(--fg)"
+              >
+                <path
+                  d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.84 10.93c.57.1.78-.25.78-.56 0-.28-.01-1.02-.02-2-3.19.69-3.86-1.54-3.86-1.54-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1.02 1.75 2.67 1.24 3.32.95.1-.74.4-1.24.72-1.52-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.17-3.1-.12-.29-.51-1.45.11-3.03 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.74.11 3.03.73.81 1.17 1.84 1.17 3.1 0 4.43-2.69 5.39-5.25 5.67.41.36.77 1.08.77 2.18 0 1.57-.02 2.83-.02 3.22 0 .31.21.67.79.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <p>
+          A fast, asynchronous web crawler written in Python that efficiently
+          scrapes and indexes web pages using asyncio and aiohttp for high
+          concurrency, and BeautifulSoup for HTML parsing.
+        </p>
+
+        <div class="repo-tags">
+          <span class="tag">Python 3.13</span>
+          <span class="tag">aiohttp</span>
+          <span class="tag">BeautifulSoup4</span>
+          <span class="tag">Asyncio</span>
+          <span class="tag">URL Indexer</span>
+        </div>
+
+        <div class="repo-meta">
+          <span class="lang"><span class="dot python"></span> Python</span>
+        </div>
+      </div>
+
+      <div class="repo-card">
+        <div class="repo-header">
+          <h3>Hand Controller</h3>
+          <div class="repo-links">
+            <a
+              href="https://github.com/BenjaminBurnell/Async-Web-Crawler"
+              target="_blank"
+              aria-label="View Repository"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="var(--fg)"
+              >
+                <path
+                  d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.84 10.93c.57.1.78-.25.78-.56 0-.28-.01-1.02-.02-2-3.19.69-3.86-1.54-3.86-1.54-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1.02 1.75 2.67 1.24 3.32.95.1-.74.4-1.24.72-1.52-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.17-3.1-.12-.29-.51-1.45.11-3.03 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.74.11 3.03.73.81 1.17 1.84 1.17 3.1 0 4.43-2.69 5.39-5.25 5.67.41.36.77 1.08.77 2.18 0 1.57-.02 2.83-.02 3.22 0 .31.21.67.79.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <p>
+          A fast, asynchronous web crawler written in Python that efficiently
+          scrapes and indexes web pages using asyncio and aiohttp for high
+          concurrency, and BeautifulSoup for HTML parsing.
+        </p>
+
+        <div class="repo-tags">
+          <span class="tag">Python 3.13</span>
+          <span class="tag">aiohttp</span>
+          <span class="tag">BeautifulSoup4</span>
+          <span class="tag">Asyncio</span>
+          <span class="tag">URL Indexer</span>
+        </div>
+
+        <div class="repo-meta">
+          <span class="lang"><span class="dot python"></span> Python</span>
+        </div>
+      </div>
+
+      <div class="repo-card">
+        <div class="repo-header">
+          <h3>Rubix Cube Solver</h3>
+          <div class="repo-links">
+            <a
+              href="https://github.com/BenjaminBurnell/Cube_Solver"
+              target="_blank"
+              aria-label="View Repository"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="var(--fg)"
+              >
+                <path
+                  d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.84 10.93c.57.1.78-.25.78-.56 0-.28-.01-1.02-.02-2-3.19.69-3.86-1.54-3.86-1.54-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1.02 1.75 2.67 1.24 3.32.95.1-.74.4-1.24.72-1.52-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.17-3.1-.12-.29-.51-1.45.11-3.03 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.74.11 3.03.73.81 1.17 1.84 1.17 3.1 0 4.43-2.69 5.39-5.25 5.67.41.36.77 1.08.77 2.18 0 1.57-.02 2.83-.02 3.22 0 .31.21.67.79.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <p>
+          An intelligent Rubik’s Cube solver built with Python that uses
+          computer vision and color classification to identify cube states and
+          compute the optimal solution.
+        </p>
+
+        <div class="repo-tags">
+          <span class="tag">Python 3.12</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">Kociemba</span>
+        </div>
+
+        <div class="repo-meta">
+          <span class="lang"><span class="dot python"></span> Python</span>
+        </div>
+      </div>
+
+      <div class="repo-card">
+        <div class="repo-header">
+          <h3>Lyrify</h3>
+          <div class="repo-links">
+            <!-- <a
+              href="https://benjaminburnell.github.io/Lyrify/"
+              target="_blank"
+              aria-label="Visit Live Demo"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon"
+                viewBox="0 -960 960 960"
+                fill="var(--fg)"
+              >
+                <path
+                  d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
+                />
+              </svg>
+            </a> -->
+            <a
+              href="https://github.com/BenjaminBurnell/Lyrify"
+              target="_blank"
+              aria-label="View Repository"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="var(--fg)"
+              >
+                <path
+                  d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.84 10.93c.57.1.78-.25.78-.56 0-.28-.01-1.02-.02-2-3.19.69-3.86-1.54-3.86-1.54-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1.02 1.75 2.67 1.24 3.32.95.1-.74.4-1.24.72-1.52-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.17-3.1-.12-.29-.51-1.45.11-3.03 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.74.11 3.03.73.81 1.17 1.84 1.17 3.1 0 4.43-2.69 5.39-5.25 5.67.41.36.77 1.08.77 2.18 0 1.57-.02 2.83-.02 3.22 0 .31.21.67.79.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <p>
+          A sleek web app that syncs Spotify tracks with real-time lyrics —
+          delivering a live karaoke-style experience with adaptive themes and
+          smooth visual transitions.
+        </p>
+
+        <div class="repo-tags">
+          <span class="tag">JavaScript (ES6)</span>
+          <span class="tag">Spotify Web API</span>
+          <span class="tag">LRC Lib API</span>
+        </div>
+
+        <div class="repo-meta">
+          <span class="lang"><span class="dot js"></span> JavaScript</span>
+        </div>
+      </div>
+
+      <!-- Repeat this structure for other repos -->
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Let's Connect</h2>
+    <p class="contact-text">
+      I'm always interested in new opportunities, collaborations, and
+      interesting conversations. Feel free to reach out if you'd like to chat!
+    </p>
+
+    <a href="mailto:benburnell.git@gmail.com" class="contact-email">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon-mail"
+        viewBox="0 -960 960 960"
+        fill="#1f1f1f"
+      >
+        <path
+          d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+        />
+      </svg>
+      benburnell.git@gmail.com
+    </a>
+
+    <div class="social-links">
+      <a href="https://github.com/yourusername" target="_blank">
+        <i class="fa-brands fa-github"></i>
+        GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/ben-burnell-923b19326/" target="_blank">
+        <i class="fa-brands fa-linkedin"></i>
+        LinkedIn
+      </a>
+      <a href="assets/Ben Burnell's Resume.pdf" download="Ben Burnell's Resume.pdf" target="_blank">
+        <i class="fa-regular fa-file"></i>
+        Resume
+      </a>
+      <!-- <a href="https://youtube.com/@yourusername" target="_blank">
+        <i class="fa-brands fa-youtube"></i>
+        YouTube
+      </a> -->
+    </div>
+  </section>
+
+  <footer class="fade-in hidden">
+    <p>© 2025 Benjamin Burnell — Crafted with HTML5, CSS, JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
