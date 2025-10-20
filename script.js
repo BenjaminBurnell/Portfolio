@@ -185,5 +185,5 @@ window.addEventListener('load', () => {
 });
 
 function openProject(URL) {
-  window.location = window.location.origin + '/Project/?name=' + URL
+  window.location = window.location.origin + '/project/?name=' + URL
 }
