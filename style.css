@@ -744,24 +744,38 @@ body.light .repo-card:hover {
   margin-bottom: 15px;
 }
 
-.repo-card > .repo-header > .repo-links {
-  display: flex;
-  gap: 0.4rem;
-  opacity: 0;
-  transform: translateY(4px);
-  transition:.15s;
-  padding:5px;
-  border-radius: 10px;
+@media(pointer:fine) {
+  .repo-card > .repo-header > .repo-links {
+    display: flex;
+    gap: 0.4rem;
+    opacity: 0;
+    transform: translateY(4px);
+    transition:.15s;
+    padding:5px;
+    border-radius: 10px;
+  }
+
+  .repo-card:hover > .repo-header > .repo-links {
+    display: flex;
+    gap: 0.4rem;
+    opacity: 1;
+    transform: translateY(0px);
+    transition:.15s;
+    padding:5px;
+    border-radius: 10px;
+  }
 }
 
-.repo-card:hover > .repo-header > .repo-links {
-  display: flex;
-  gap: 0.4rem;
-  opacity: 1;
-  transform: translateY(0px);
-  transition:.15s;
-  padding:5px;
-  border-radius: 10px;
+@media(pointer:thumb) {
+  .repo-card > .repo-header > .repo-links {
+    display: flex;
+    gap: 0.4rem;
+    opacity: 1;
+    transform: translateY(0px);
+    transition:.15s;
+    padding:5px;
+    border-radius: 10px;
+  }
 }
 
 
