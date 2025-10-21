@@ -28,12 +28,24 @@ body.light {
 }
 
 /* ===================== BASE ===================== */
-body, html {
-  cursor: none !important;
+@media (pointer: fine) {
+  body, html {
+    cursor: none !important;
+  }
+
+  a, button {
+    cursor: none;
+  }
 }
 
-a, button {
-  cursor: none;
+@media (pointer: coarse) {
+  body, html {
+    cursor: pointer !important;
+  }
+
+  a, button {
+    cursor: pointer;
+  }
 }
 
 body {
@@ -50,7 +62,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items:center;
-  cursor: none;
   transition: 0.3s, color 0.3s;
 }
 
