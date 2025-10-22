@@ -248,8 +248,8 @@
                 <a href="../index.html#projects">Projects</a>
                 <a href="../index.html#contact">Contact</a>
             </nav> -->
-            <a href="../index.html" class="back-btn-1"><i class="fa-solid fa-arrow-left"></i></a>
-            <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+            <a href="../" class="back-btn-1"><i class="fa-solid fa-arrow-left"></i></a>
+            <a href="../" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
             <nav class="nav-Buttons-Container">
                 <button id="theme-toggle" class="toggle-btn" aria-label="Toggle Theme">
                     <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
@@ -366,7 +366,7 @@
         projects.forEach((project, index) => {
             const item = document.createElement("a");
             item.classList.add("project-item");
-            item.href = window.location.origin + "/project/?name=" + encodeURIComponent(project.link)
+            item.href = window.location.origin + "/projects/project/?name=" + encodeURIComponent(project.link)
             item.innerHTML = `
         <div class="project-info">
           <i class="fa-regular fa-file-code"></i>
@@ -390,7 +390,7 @@
                 item.addEventListener('mouseout', () => {
                     customCursor.classList.remove('hover-target');
                 });
-            }, 500)
+            }, 800)
         });
     </script>
 </body>

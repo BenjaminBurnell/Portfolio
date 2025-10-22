@@ -348,6 +348,17 @@ pre {
   100% { transform: translateY(10px); opacity: 0;}
 }
 
+@media (max-width: 500px) {
+  .hero-section {
+    text-align: left;
+    align-items: left;
+  }
+
+  .hero-buttons {
+    justify-content: left;
+  }
+}
+
 /* ===================== ANIMATION SEQUENCE ===================== */
 
 /* Make hero children fade in sequentially */
@@ -475,6 +486,7 @@ body:not(.light) #sun-icon {
 .about-text {
   z-index: 2;
   align-self: start;
+  text-align:left;
 }
 
 .about-subtitle {
@@ -678,6 +690,7 @@ body:not(.light) #sun-icon {
 }
 
 .repo-subtitle {
+  width:100%;
   text-align:center;
   color: var(--accent);
   font-size: 0.9rem;
@@ -689,10 +702,19 @@ body:not(.light) #sun-icon {
   text-align:center;
   max-width: 750px;
   font-size: 1.8rem;
-  line-height: 1.5;
+  /* line-height: 1.5; */
+  margin: 0px;
   font-weight: 600;
-  margin-bottom: 50px;
   color:var(--fg);
+}
+
+.repo-description {
+  text-align:center;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 75px;
+  max-width: 750px;
 }
 
 .repo-card p {
@@ -708,19 +730,6 @@ body:not(.light) #sun-icon {
 /* Optional: make the text slightly brighter in light mode */
 body.light .repo-card p {
   color: color-mix(in srgb, var(--fg) 70%, var(--muted) 30%);
-}
-
-
-body:not(.light) .repo-card:hover {
-  transform: translateY(-4px);
-  /* border-color: var(--accent); */
-  background: var(--border);
-}
-
-body.light .repo-card:hover {
-  transform: translateY(-4px);
-  /* border-color: var(--accent); */
-  background: var(--border);
 }
 
 .repo-meta {
@@ -745,6 +754,25 @@ body.light .repo-card:hover {
 .js { background: var(--lang-js); }
 .pyml { background: var(--lang-pyml); }
 .html { background: var(--lang-html); }
+
+@media (max-width:500px) {
+  .repo-text {
+    display:flex;
+    flex-direction: column;
+  }
+
+  .repo-subtitle {
+    text-align:left;
+  }
+
+  .repo-title {
+    text-align:left;
+  }
+
+  .repo-description {
+    text-align:left;
+  }
+}
 
 /* ===================== REPO ICONS ===================== */
 .repo-header {
@@ -774,6 +802,18 @@ body.light .repo-card:hover {
     transition:.15s;
     padding:5px;
     border-radius: 10px;
+  }
+
+  body:not(.light) .repo-card:hover {
+    transform: translateY(-4px);
+    /* border-color: var(--accent); */
+    background: var(--border);
+  }
+
+  body.light .repo-card:hover {
+    transform: translateY(-4px);
+    /* border-color: var(--accent); */
+    background: var(--border);
   }
 }
 
