@@ -180,10 +180,14 @@ body {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  max-height: 700px;
+
+  /* Height rules */
   min-height: calc(100vh - 100px);
-  /* background: var(--bg); */
+  max-height: 700px;
+
+  /* Visuals */
   color: var(--fg);
+  /* background: var(--bg); */
   /* padding: 3rem 1rem; */
   /* border-bottom: 1px solid var(--border); */
 
@@ -192,8 +196,33 @@ body {
   margin-top: 50px;
   transform: translateY(20px) scale(0.97);
   transition: opacity 0.8s ease, transform 0.8s ease;
-  width:calc(100vw - 50px);
+
+  /* Width rules */
+  width: calc(100vw - 50px);
   max-width: 900px;
+}
+
+#hero-tags {
+  width:fit-content;
+  height:fit-content;
+  justify-self: center;
+  margin-bottom: -20px;
+}
+
+.hero-tag {
+  background:var(--bg-alt);
+  border: 1px solid var(--border);
+  padding:5px 15px;
+  border-radius: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition:.25s;
+}
+
+.hero-tag:hover {
+  scale:1.03;
+  transition:.15s;
 }
 
 /* When revealed by JS */
@@ -357,6 +386,29 @@ pre {
   .hero-buttons {
     justify-content: left;
   }
+
+  #hero-tags {
+    width:fit-content;
+    height:fit-content;
+    justify-self: left;
+    margin-bottom: -20px;
+  }
+
+  .hero-tag {
+    background:var(--bg-alt);
+    border: 1px solid var(--border);
+    padding:5px 15px;
+    border-radius: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition:0s;
+  }
+
+  .hero-tag:hover {
+    scale: 1;
+    transition:0;
+  }
 }
 
 /* ===================== ANIMATION SEQUENCE ===================== */
@@ -416,14 +468,10 @@ pre {
   justify-content: center;
   padding: 6px;
   border-radius: 6px;
+  width:32px;
   transition: 0.3s ease, transform 0.3s ease;
   color: var(--fg);
-}
-
-.toggle-btn:hover {
-  background: var(--bg-alt);
-  /* transform: rotate(10deg);   */
-  transition:.0s;
+  position:relative;
 }
 
 .social-btn {
@@ -438,16 +486,32 @@ pre {
   color: var(--fg);
 }
 
-.social-btn:hover {
-  background: var(--bg-alt);
-  /* transform: rotate(10deg);   */
-  transition:.0s;
+@media (min-width:500px) {
+  .toggle-btn:hover {
+    background: var(--bg-alt);
+    /* transform: rotate(10deg);   */
+    transition:.0s;
+  }
+
+  .social-btn:hover {
+    background: var(--bg-alt);
+    transition:.0s;
+  }
 }
 
 #moon-icon, #sun-icon {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   transition: opacity 0.3s ease;
+}
+
+#moon-icon {
+  width: 25px;
+  height: 25px;
+  position:absolute;
+  top:calc(50% + 1.5px);
+  left:calc(50% - 1.5px);
+  transform:translate(-50%, -50%);
 }
 
 body.light #moon-icon {

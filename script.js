@@ -32,23 +32,6 @@ if (isHomePage()) {
     });
   });
 
-  // // ================= Smooth Scroll for Hero Buttons =================
-  // document.querySelectorAll('#hero-buttons a').forEach(link => {
-  //   link.addEventListener('click', event => {
-  //     event.preventDefault(); // stop the default jump
-
-  //     const targetId = link.getAttribute('href').substring(1);
-  //     const targetElement = document.getElementById(targetId);
-
-  //     if (targetElement) {
-  //       window.scrollTo({
-  //         top: targetElement.offsetTop - 35, // adjust offset if you have a sticky header
-  //         behavior: 'smooth'
-  //       });
-  //     }
-  //   });
-  // }); 
-
 
   // ================= Scroll Animations =================
   const fadeEls = document.querySelectorAll('.fade-in');
@@ -104,7 +87,7 @@ document.addEventListener('mouseenter', () => {
 
 // Hover effects for interactive targets
 const targets = document.querySelectorAll(
-  'a, p, h1, h2, h3, #song-display, button, .style-preview-card, img, .repo-card, .project-item'
+  'a, p, h1, h2, h3, #song-display, button, .style-preview-card, img, .repo-card, .project-item, .hero-tag'
 );
 
 targets.forEach(target => {
