@@ -24,10 +24,17 @@ if (isHomePage()) {
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 35, // adjust offset if you have a sticky header
-          behavior: 'smooth'
-        });
+        if(targetId == "contact") {
+          window.scrollTo({
+            top: targetElement.offsetTop - 150, // adjust offset if you have a sticky header
+            behavior: 'smooth'
+          });
+        } else {
+          window.scrollTo({
+            top: targetElement.offsetTop - 35, // adjust offset if you have a sticky header
+            behavior: 'smooth'
+          });
+        }
       }
     });
   });
@@ -170,3 +177,19 @@ window.addEventListener('load', () => {
 function openProject(URL) {
   window.location = window.location.origin + '/project/?name=' + URL
 }
+
+
+// ================= Nav Bar Box Shadow Animation =================
+const navBar = document.querySelectorAll(".navbar")
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  if (scrollTop >= 25 && scrollTop <= 85) {
+    boxShadow = "0px 0px 25px " + Math.round((scrollTop - 25) / 4) + "px var(--bg)"
+    navBar[0].style.boxShadow = boxShadow
+  } else if(scrollTop > 85) {
+    navBar[0].style.boxShadow = "0px 0px 25px 15px var(--bg)"
+  } else if(scrollTop < 25) {
+    navBar[0].style.boxShadow = "0px 0px 0px 0px var(--bg)"
+  }
+});

@@ -509,7 +509,7 @@ pre {
   width: 25px;
   height: 25px;
   position:absolute;
-  top:calc(50% + 1.5px);
+  top:calc(50% + 3px);
   left:calc(50% - 1.5px);
   transform:translate(-50%, -50%);
 }
@@ -949,6 +949,8 @@ body.light .repo-card p {
 /* ===================== CONTACT SECTION ===================== */
 .contact-section {
   text-align: center;
+  position:relative;
+  margin-top: 100px;
   padding: 5rem 1rem 4rem;
   /* background: var(--bg); */
   color: var(--fg);
@@ -960,6 +962,8 @@ body.light .repo-card p {
   font-size: 2rem;
   color: var(--fg);
   margin-bottom: 1rem;
+  z-index: 1; 
+  position:relative;
 }
 
 .contact-text {
@@ -969,6 +973,8 @@ body.light .repo-card p {
   margin: 0 auto 2rem;
   line-height: 1.6;
   font-size: 1rem;
+  z-index: 1;
+  position:relative;
 }
 
 .contact-email {
@@ -982,6 +988,7 @@ body.light .repo-card p {
   border-radius: 8px;
   font-weight: 500;
   transition: 0.3s ease, transform 0.3s ease;
+  position: relative;
 }
 
 .contact-email:hover {
@@ -995,6 +1002,7 @@ body.light .repo-card p {
   width: 18px;
   height: 18px;
   fill: var(--bg);
+  position:relative;
 }
 
 .social-links {
@@ -1004,6 +1012,7 @@ body.light .repo-card p {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
+  position:relative;
 }
 
 .social-links a {
@@ -1160,4 +1169,53 @@ footer {
 
 .close-popup:hover {
   background: var(--accent);
+}
+
+#highlight-light-container {
+  position:absolute;
+  top:-75px;
+  left:50%;
+  transform:translate(-50%);
+  width:100vw;
+  height:500px;
+  overflow: hidden;
+  transition:.15s;
+}
+
+#highlight-light {
+  --size: 600px;
+  width:var(--size);
+  height:var(--size);
+  overflow: hidden;
+  position:absolute;
+  top:25%;
+  margin-top: 35px;
+  left:50%;
+  transform:translate(-50%) rotate(45deg);
+  z-index: 0;
+  transition:.15s;
+}
+
+#light-element {
+  --size: 600px;
+  --negative-size:calc((var(--size) * -1) / 2.5);
+  width:var(--size);
+  height:var(--size);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 0, 0.497) 0%,
+    transparent 70%
+  );
+  /* background:yellow; */
+  position:absolute;
+  top: var(--negative-size);
+  left: var(--negative-size);
+  /* transform:translate(50%, 50%); */
+  transition:.15s;
+}
+
+#highlight-light-icon {
+  width:35px;
+  height:35px;
 }

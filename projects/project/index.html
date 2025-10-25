@@ -1,270 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>README | Benjamin Burnell</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-        rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../../style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css"
+    />
     <style>
-        main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: calc(100vw - 50px);
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: calc(100vw - 50px);
+        min-height: 100vh;
+        box-sizing: border-box;
+      }
 
-        .readme-container {
-            /* background: var(--bg-alt); */
-            color: var(--fg);
-            /* border: 1px solid var(--border); */
-            border-radius: 10px;
-            /* padding: 2rem 2.5rem; */
-            /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); */
-            padding-top: 120px;
-            line-height: 1.7;
-            max-width: 900px;
-            width: 100%;
-            /* background:red; */
-            margin-bottom: 4rem;
-        }
+      .readme-container {
+        /* background: var(--bg-alt); */
+        color: var(--fg);
+        /* border: 1px solid var(--border); */
+        border-radius: 10px;
+        /* padding: 2rem 2.5rem; */
+        /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); */
+        padding-top: 120px;
+        line-height: 1.7;
+        max-width: 900px;
+        width: 100%;
+        /* background:red; */
+        margin-bottom: 4rem;
+      }
 
-        .markdown-body {
-            color: var(--fg);
-            background: transparent;
-            font-family: "JetBrains Mono", monospace;
-            border: none;
-        }
+      .markdown-body {
+        color: var(--fg);
+        background: transparent;
+        font-family: "JetBrains Mono", monospace;
+        border: none;
+      }
 
-        .markdown-body a {
-            color: var(--accent);
-            text-decoration: none;
-            border: none;
-        }
+      .markdown-body a {
+        color: var(--accent);
+        text-decoration: none;
+        border: none;
+      }
 
-        .markdown-body a:hover {
-            text-decoration: underline;
-            border: none;
-        }
+      .markdown-body a:hover {
+        text-decoration: underline;
+        border: none;
+      }
 
-        .markdown-body pre {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            color: var(--muted);
-            border-radius: 8px;
-            padding: 10px;
-            overflow-x: auto;
-            /* border: none; */
-        }
+      .markdown-body pre {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        color: var(--muted);
+        border-radius: 8px;
+        padding: 10px;
+        overflow-x: auto;
+        /* border: none; */
+      }
 
-        .markdown-body code {
-            background: var(--bg-alt);
-            padding: 2px 5px;
-            border-radius: 4px;
-            /* border: none; */
-        }
+      .markdown-body code {
+        background: var(--bg-alt);
+        padding: 2px 5px;
+        border-radius: 4px;
+        /* border: none; */
+      }
 
-        .markdown-body h1 {
-            color: var(--fg);
-            border: none;
-        }
-        .markdown-body h2,
-        .markdown-body h3 {
-            color: var(--accent);
-            border: none;
+      .markdown-body h1 {
+        color: var(--fg);
+        border: none;
+      }
+      .markdown-body h2,
+      .markdown-body h3 {
+        color: var(--accent);
+        border: none;
+      }
+
+      .back-btn {
+        display: none;
+      }
+
+      .back-btn-1 {
+        display: inline-flex;
+        align-items: center;
+        justify-self: center;
+        gap: 6px;
+        color: var(--fg);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      @media (min-width: 800px) {
+        .back-btn-1 {
+          display: none;
         }
 
         .back-btn {
-            display: none;
+          display: inline-flex;
+          align-items: center;
+          justify-self: center;
+          gap: 6px;
+          color: var(--fg);
+          text-decoration: none;
+          transition: color 0.2s;
         }
 
-        .back-btn-1 {
-            display: inline-flex;
-            align-items: center;
-            justify-self: center;
-            gap: 6px;
-            color: var(--fg);
-            text-decoration: none;
-            transition: color 0.2s;
+        .back-btn:hover {
+          color: var(--accent);
         }
+      }
 
-        @media (min-width:800px) {
-            .back-btn-1 {
-                display:none;
-            }
+      footer {
+        text-align: center;
+        margin-top: 2rem;
+        padding-bottom: 1rem;
+        color: var(--muted);
+      }
 
-            .back-btn {
-                display: inline-flex;
-                align-items: center;
-                justify-self: center;
-                gap: 6px;
-                color: var(--fg);
-                text-decoration: none;
-                transition: color 0.2s;
-            }
+      /* Prevent overlap with footer or social links */
+      .social-links {
+        position: relative;
+        margin-top: 3rem;
+        /* padding-bottom: 3rem; */
+      }
 
-            .back-btn:hover {
-                color: var(--accent);
-            }
-        }
+      body {
+        width: 100vw;
+        overflow-y: auto;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-        footer {
-            text-align: center;
-            margin-top: 2rem;
-            padding-bottom: 1rem;
-            color: var(--muted);
-        }
+      main > h2 {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        border: none;
+      }
 
-        /* Prevent overlap with footer or social links */
-        .social-links {
-            position: relative;
-            margin-top: 3rem;
-            padding-bottom: 3rem;
-        }
-
-        body {
-            width:100vw;
-            overflow-y: auto;
-            height: auto;
-            display: flex;
-            align-items: center;
-            justify-content:center;
-        }
-
-        main > h2 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-            border: none;
-        }
-
-        .markdown-body hr {
-            display:none;
-        }
+      .markdown-body hr {
+        display: none;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Loader -->
     <div id="loader">
-        <div class="spinner"></div>
-        <p>Loading README...</p>
+      <div class="spinner"></div>
+      <p>Loading README...</p>
     </div>
 
     <!-- Navbar -->
     <header class="navbar hidden">
-        <div id="navbar-Content">
-            <!-- <nav id="nav-Section-Links">
+      <div id="navbar-Content">
+        <!-- <nav id="nav-Section-Links">
                 <a href="../index.html#about">About</a>
                 <a href="../index.html#projects">Projects</a>
                 <a href="../index.html#contact">Contact</a>
             </nav> -->
-            <a href="../" class="back-btn-1"><i class="fa-solid fa-arrow-left"></i></a>
-            <a href="../" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
-            <nav class="nav-Buttons-Container">
-                <button id="theme-toggle" class="toggle-btn" aria-label="Toggle Theme">
-                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
-                        fill="var(--fg)">
-                        <path d="M21 12.79A9 9 0 0 1 11.21 3 7 7 0 1 0 21 12.79Z" />
-                    </svg>
-                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="var(--fg)">
-                        <path d="M440-760v-160h80v160h-80Zm266 110-55-55 112-115 56 57-113 113Zm54 210v-80h160v80H760ZM440-40v-160h80v160h-80ZM254-652 140-763l57-56 113 113-56 54Zm508 512L651-255l54-54 114 110-57 59ZM40-440v-80h160v80H40Zm157 300-56-57 112-112 29 27 29 28-114 114Zm283-100q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q66 0 113-47t47-113q0-66-47-113t-113-47q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-160Z"/>
-                    </svg>
-                </button>
-                <button class="social-btn" onclick="window.open('https://github.com/benjaminburnell')">
-                    <i class="fa-brands fa-github" style="font-size: 1.2rem;"></i>
-                </button>
+        <a href="../" class="back-btn-1"
+          ><i class="fa-solid fa-arrow-left"></i
+        ></a>
+        <a href="../" class="back-btn"
+          ><i class="fa-solid fa-arrow-left"></i> Back to Projects</a
+        >
+        <nav class="nav-Buttons-Container">
+          <button
+            id="theme-toggle"
+            class="toggle-btn"
+            aria-label="Toggle Theme"
+          >
+            <svg
+              id="moon-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="var(--fg)"
+            >
+              <path d="M21 12.79A9 9 0 0 1 11.21 3 7 7 0 1 0 21 12.79Z" />
+            </svg>
+            <svg
+              id="sun-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 -960 960 960"
+              fill="var(--fg)"
+            >
+              <path
+                d="M440-760v-160h80v160h-80Zm266 110-55-55 112-115 56 57-113 113Zm54 210v-80h160v80H760ZM440-40v-160h80v160h-80ZM254-652 140-763l57-56 113 113-56 54Zm508 512L651-255l54-54 114 110-57 59ZM40-440v-80h160v80H40Zm157 300-56-57 112-112 29 27 29 28-114 114Zm283-100q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q66 0 113-47t47-113q0-66-47-113t-113-47q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-160Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="social-btn"
+            onclick="window.open('https://github.com/benjaminburnell')"
+          >
+            <i class="fa-brands fa-github" style="font-size: 1.2rem"></i>
+          </button>
 
-                <button class="social-btn" onclick="window.open('https://www.linkedin.com/in/benjaminburnell/')"
-                    target="_blank">
-                    <i class="fa-brands fa-linkedin" style="font-size: 1.2rem;"></i>
-                </button>
-                <button class="social-btn" style="padding:6px 10px;" id="download-resume">
-                    <i class="fa-regular fa-file" style="font-size: 1rem;"></i>
-                </button>
-            </nav>
-        </div>
+          <button
+            class="social-btn"
+            onclick="window.open('https://www.linkedin.com/in/benjaminburnell/')"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin" style="font-size: 1.2rem"></i>
+          </button>
+          <button
+            class="social-btn"
+            style="padding: 6px 10px"
+            id="download-resume"
+          >
+            <i class="fa-regular fa-file" style="font-size: 1rem"></i>
+          </button>
+        </nav>
+      </div>
     </header>
 
     <!-- README Content -->
     <main>
-        <div class="readme-container hidden fade-in">
-            <article id="readme" class="markdown-body">
-                <p>Loading README.md content...</p>
-            </article>
-        </div>
+      <div class="readme-container hidden fade-in">
+        <article id="readme" class="markdown-body">
+          <p>Loading README.md content...</p>
+        </article>
+      </div>
 
-        <!-- Social Links (same style as portfolio footer) -->
+      <!-- Social Links (same style as portfolio footer) -->
+      <section id="contact" class="contact-section">
+        <div id="highlight-light-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="var(--muted)"
+            id="highlight-light-icon"
+          >
+            <path
+              d="M480-120q-66 0-113-47t-47-113H200q-33 0-56.5-23.5T120-360q0-140 92-241.5T440-718v-122h80v122q136 15 228 116.5T840-360q0 33-23.5 56.5T760-280H640q0 66-47 113t-113 47ZM200-360h560q0-116-82-198t-198-82q-116 0-198 82t-82 198Zm280 160q33 0 56.5-23.5T560-280H400q0 33 23.5 56.5T480-200Zm0-80Z"
+            />
+          </svg>
+
+          <div id="highlight-light">
+            <div id="light-element"></div>
+          </div>
+        </div>
         <h2>Let's Connect</h2>
         <p class="contact-text">
-            I'm always interested in new opportunities, collaborations, and
-            interesting conversations. Feel free to reach out if you'd like to chat!
+          I'm always interested in new opportunities, collaborations, and
+          interesting conversations. Feel free to reach out if you'd like to
+          chat!
         </p>
 
-        <a href="mailto:benburnell.git@gmail.com?subject=Let's%20Connect&body=Hi%20Ben%2C%0A%0AI%20found%20your%20portfolio%20and%20wanted%20to%20reach%20out."
-            class="contact-email">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon-mail" viewBox="0 -960 960 960" fill="#1f1f1f">
-                <path
-                    d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
-            </svg>
-            benburnell.git@gmail.com
+        <a
+          href="mailto:benburnell.git@gmail.com?subject=Let's%20Connect&body=Hi%20Ben%2C%0A%0AI%20found%20your%20portfolio%20and%20wanted%20to%20reach%20out."
+          class="contact-email"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon-mail"
+            viewBox="0 -960 960 960"
+            fill="#1f1f1f"
+          >
+            <path
+              d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+            />
+          </svg>
+          benburnell.git@gmail.com
         </a>
 
         <div class="social-links">
-            <a href="https://github.com/benjaminburnell" target="_blank">
-                <i class="fa-brands fa-github"></i>
-                GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/benjaminburnell/" target="_blank">
-                <i class="fa-brands fa-linkedin"></i>
-                LinkedIn
-            </a>
-            <a href="assets/Ben Burnell's Resume.pdf" download="Ben Burnell's Resume.pdf" target="_blank">
-                <i class="fa-regular fa-file"></i>
-                Resume
-            </a>
-            <!-- <a href="https://youtube.com/@yourusername" target="_blank">
-                <i class="fa-brands fa-youtube"></i>
-                YouTube
-            </a> -->
+          <a href="https://github.com/benjaminburnell" target="_blank">
+            <i class="fa-brands fa-github"></i>
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/benjaminburnell/"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+            LinkedIn
+          </a>
+          <a
+            href="assets/Ben Burnell's Resume.pdf"
+            download="Ben Burnell's Resume.pdf"
+            target="_blank"
+          >
+            <i class="fa-regular fa-file"></i>
+            Resume
+          </a>
+          <!-- <a href="https://youtube.com/@yourusername" target="_blank">
+        <i class="fa-brands fa-youtube"></i>
+        YouTube
+      </a> -->
         </div>
+      </section>
 
-        <footer>
-            <p>© 2025 Benjamin Burnell — Crafted with HTML5, CSS3+, JavaScript(ES6)</p>
-        </footer>
+      <footer>
+        <p>
+          © 2025 Benjamin Burnell — Crafted with HTML5, CSS3+, JavaScript(ES6)
+        </p>
+      </footer>
     </main>
 
     <!-- Email Popup -->
     <div id="email-popup" class="email-popup email-hidden">
-        <div class="email-popup-content">
-            <h3>Contact Me</h3>
-            <p>Choose how you’d like to reach me:</p>
+      <div class="email-popup-content">
+        <h3>Contact Me</h3>
+        <p>Choose how you’d like to reach me:</p>
 
-            <div class="email-options">
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=benburnell.git@gmail.com" target="_blank"
-                    class="email-btn">
-                    <i class="fa-brands fa-google"></i>Gmail
-                </a>
-                <a href="https://compose.mail.yahoo.com/?to=benburnell.git@gmail.com" target="_blank" class="email-btn">
-                    <i class="fa-brands fa-yahoo"></i>Yahoo
-                </a>
-                <a href="https://outlook.live.com/mail/0/deeplink/compose?to=benburnell.git@gmail.com" target="_blank"
-                    class="email-btn">
-                    <i class="fa-brands fa-windows"></i>Outlook
-                </a>
-                <button id="copy-email" class="email-btn">
-                    <i class="fa-regular fa-copy"></i>Copy Email
-                </button>
-            </div>
-
-            <button id="close-popup" class="close-popup">Close</button>
+        <div class="email-options">
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=benburnell.git@gmail.com"
+            target="_blank"
+            class="email-btn"
+          >
+            <i class="fa-brands fa-google"></i>Gmail
+          </a>
+          <a
+            href="https://compose.mail.yahoo.com/?to=benburnell.git@gmail.com"
+            target="_blank"
+            class="email-btn"
+          >
+            <i class="fa-brands fa-yahoo"></i>Yahoo
+          </a>
+          <a
+            href="https://outlook.live.com/mail/0/deeplink/compose?to=benburnell.git@gmail.com"
+            target="_blank"
+            class="email-btn"
+          >
+            <i class="fa-brands fa-windows"></i>Outlook
+          </a>
+          <button id="copy-email" class="email-btn">
+            <i class="fa-regular fa-copy"></i>Copy Email
+          </button>
         </div>
+
+        <button id="close-popup" class="close-popup">Close</button>
+      </div>
     </div>
 
     <div id="custom-cursor"></div>
@@ -272,35 +358,38 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script defer src="../../script.js"></script>
     <script>
-        // Get the full current URL
-        const currentUrl = window.location.href;
+      // Get the full current URL
+      const currentUrl = window.location.href;
 
-        // Create a URL object
-        const url = new URL(currentUrl);
+      // Create a URL object
+      const url = new URL(currentUrl);
 
-        // Create a URLSearchParams object from the query string
-        const params = new URLSearchParams(url.search);
+      // Create a URLSearchParams object from the query string
+      const params = new URLSearchParams(url.search);
 
-        // Get specific parameters
-        const name = params.get("name"); // → "Lyrify"
+      // Get specific parameters
+      const name = params.get("name"); // → "Lyrify"
 
-        // Log them
-        console.log(name);
-        const readmeURL = "https://raw.githubusercontent.com/BenjaminBurnell/" + name + "/main/README.md";
+      // Log them
+      console.log(name);
+      const readmeURL =
+        "https://raw.githubusercontent.com/BenjaminBurnell/" +
+        name +
+        "/main/README.md";
 
-        fetch(readmeURL)
-            .then(res => {
-                if (!res.ok) throw new Error("README not found.");
-                return res.text();
-            })
-            .then(md => {
-                document.getElementById("readme").innerHTML = marked.parse(md);
-            })
-            .catch(err => {
-                document.getElementById("readme").innerHTML =
-                    `<p style="color:red;">Error loading README: ${err.message}</p>`;
-            });
+      fetch(readmeURL)
+        .then((res) => {
+          if (!res.ok) throw new Error("README not found.");
+          return res.text();
+        })
+        .then((md) => {
+          document.getElementById("readme").innerHTML = marked.parse(md);
+        })
+        .catch((err) => {
+          document.getElementById(
+            "readme"
+          ).innerHTML = `<p style="color:red;">Error loading README: ${err.message}</p>`;
+        });
     </script>
-</body>
-
+  </body>
 </html>
