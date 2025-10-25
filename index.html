@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" href="assets/B_Dark.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -505,6 +506,25 @@
     </div>
 
     <div id="custom-cursor"></div>
+
+    <!-- <script>
+      const favicon = document.getElementById("favicon");
+
+      function updateFavicon() {
+        const isLight = document.body.classList.contains("light");
+        favicon.href = isLight ? "assets/B_Light.png" : "assets/B_Dark.png";
+      }
+
+      // Run once on load
+      updateFavicon();
+
+      // If you already have a theme toggle function, call this inside it too:
+      function toggleTheme() {
+        const isLight = !document.body.classList.contains("light");
+        document.body.classList.toggle("light", isLight);
+        updateFavicon(); // sync favicon
+      }
+    </script> -->
 
     <script>
       document

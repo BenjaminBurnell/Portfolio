@@ -1079,10 +1079,9 @@ footer {
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
-    transform: translate(-50%, -50%); 
     transition: opacity 0.2s ease, transform 0.1s cubic-bezier(0.2, 0.8, 0.4, 1);
     z-index: 9999;
-    opacity:1;
+    opacity:0;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   }
 
